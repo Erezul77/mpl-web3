@@ -19,10 +19,10 @@ export default defineConfig({
         inlineDynamicImports: false,
         // Avoid eval() usage
         hoistTransitiveImports: false,
-        // Cache busting for assets
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        // Force new file names every build with shorter hash
+        entryFileNames: 'assets/[name]-[hash:8].js',
+        chunkFileNames: 'assets/[name]-[hash:8].js',
+        assetFileNames: 'assets/[name]-[hash:8].[ext]'
       }
     }
   },

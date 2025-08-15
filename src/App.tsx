@@ -88,7 +88,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className={`min-h-screen relative ${isDarkMode ? 'dark' : 'light'} build-20250816`}>
       {/* Clean Background */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
       
