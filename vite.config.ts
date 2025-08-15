@@ -18,7 +18,11 @@ export default defineConfig({
         format: 'es',
         inlineDynamicImports: false,
         // Avoid eval() usage
-        hoistTransitiveImports: false
+        hoistTransitiveImports: false,
+        // Cache busting for assets
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
   },
