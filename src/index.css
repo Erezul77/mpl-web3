@@ -57,11 +57,11 @@ body {
 
 /* Clean Panel System */
 .panel {
-  background: rgb(var(--bg-accent));
-  border: 1px solid rgb(var(--border-primary));
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.2s ease;
+  background: rgb(var(--bg-accent)) !important;
+  border: 1px solid rgb(var(--border-primary)) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.2s ease !important;
 }
 
 .panel:hover {
