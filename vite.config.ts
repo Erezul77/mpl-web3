@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mpl-web3/', // GitHub Pages base path
+  base: '/mpl-web3/', // GitHub Pages base path - forces assets to load from correct path
   mode: 'production',
   build: {
     outDir: 'dist',
