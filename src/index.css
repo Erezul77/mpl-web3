@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean & Elegant Design System - Black/White Focus */
+/* Clean & Elegant Design System - Black/White Focus - Build: 20250816 */
 :root {
   /* Light Theme - Clean & Minimal */
   --bg-primary: 255 255 255;
@@ -224,6 +224,17 @@ body {
 
 .shadow-clean-dark {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Force CSS refresh */
+.build-20250816 {
+  /* This class ensures CSS is refreshed */
+}
+
+/* Unique CSS variable to force hash change */
+:root {
+  --build-timestamp: 20250816;
+  --build-version: "0.1.2";
 }
 
 /* Responsive Design */
