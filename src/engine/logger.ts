@@ -34,7 +34,7 @@ class Logger {
   warn(msg: string, data?: any, tag?: string) { this.log('warn', msg, data, tag); }
   error(msg: string, data?: any, tag?: string) { this.log('error', msg, data, tag); }
 
-  clear() { this.buf.clear(); }
+  clear() { this.buf.length = 0; }
 
   installConsoleIntercept() {
     if (this.consoleIntercept) return;
