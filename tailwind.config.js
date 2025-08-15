@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // CSS Variables for Theme System
+        // CSS Variables for Clean Theme System
         'bg-primary': 'rgb(var(--bg-primary))',
         'bg-secondary': 'rgb(var(--bg-secondary))',
         'bg-tertiary': 'rgb(var(--bg-tertiary))',
@@ -54,10 +54,9 @@ export default {
         xs: '2px',
       },
       animation: {
-        'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-        'slide-in-right': 'slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+        'fade-in': 'fadeIn 0.3s ease',
+        'slide-up': 'slideUp 0.3s ease',
         'float': 'float 3s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         float: {
@@ -75,10 +74,11 @@ export default {
         '5xl': '2.5rem',
       },
       boxShadow: {
-        'elegant': '0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)',
-        'elegant-dark': '0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
-        'glass-dark': '0 8px 32px rgba(0, 0, 0, 0.4)',
+        'clean': '0 1px 3px rgba(0, 0, 0, 0.1)',
+        'clean-dark': '0 1px 3px rgba(0, 0, 0, 0.3)',
+        'soft': '0 1px 3px rgba(0, 0, 0, 0.1)',
+        'medium': '0 4px 6px rgba(0, 0, 0, 0.1)',
+        'strong': '0 10px 15px rgba(0, 0, 0, 0.1)',
       }
     },
   },

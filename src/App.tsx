@@ -1,5 +1,5 @@
 // src/App.tsx
-// MPL Playground - BEAUTIFUL DESIGN SYSTEM ✨
+// MPL Playground - CLEAN & ELEGANT DESIGN ✨
 import React, { useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import { VoxelSelectionProvider } from './ui/hooks/useVoxelSelection';
@@ -46,7 +46,7 @@ const EXAMPLES = {
 };
 
 export default function App() {
-  console.log('MPL Full Application - BEAUTIFUL DESIGN SYSTEM ✨');
+  console.log('MPL Full Application - CLEAN & ELEGANT DESIGN ✨');
   
   const [code, setCode] = useState(EXAMPLES['Clear Grid']);
   const [output, setOutput] = useState('');
@@ -89,11 +89,8 @@ export default function App() {
 
   return (
     <div className={`min-h-screen relative ${isDarkMode ? 'dark' : 'light'}`}>
-      {/* Beautiful Background Pattern */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-slate-500/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-      </div>
+      {/* Clean Background */}
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
       
       <LogProvider>
         <VoxelSelectionProvider>
@@ -106,19 +103,19 @@ export default function App() {
                       <RuleTemplatesProvider>
                         <RuleVersioningProvider>
                           <ParameterControlsProvider>
-                            <div className="app min-h-screen p-6 box-border">
+                            <div className="app min-h-screen p-8 box-border">
                               
-                              {/* Beautiful Top Navigation Bar */}
-                              <div className="sticky top-6 z-50 mb-8 glass-panel-elevated p-6 flex justify-between items-center">
-                                <h1 className="m-0 text-4xl font-extrabold gradient-text tracking-tight">
+                              {/* Clean Top Navigation Bar */}
+                              <div className="sticky top-8 z-50 mb-10 panel-elevated p-6 flex justify-between items-center">
+                                <h1 className="m-0 text-4xl font-extrabold text-accent-primary tracking-tight">
                                   MPL Playground ✨
                                 </h1>
                                 
                                 <div className="flex gap-6 items-center">
-                                  {/* Beautiful Theme Toggle */}
+                                  {/* Clean Theme Toggle */}
                                   <button
                                     onClick={toggleTheme}
-                                    className="btn-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"
+                                    className="btn-secondary p-3 rounded-full transition-all duration-200 hover:scale-105"
                                     title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
                                   >
                                     <span className="text-xl">
@@ -126,9 +123,9 @@ export default function App() {
                                     </span>
                                   </button>
                                   
-                                  {/* Elegant Layer Control */}
+                                  {/* Clean Layer Control */}
                                   <div className="flex items-center gap-3">
-                                    <label className="text-sm font-medium text-muted">Layer:</label>
+                                    <label className="text-sm font-medium text-text-muted">Layer:</label>
                                     <select
                                       value={activeLayer}
                                       onChange={(e) => setActiveLayer(Number(e.target.value))}
@@ -140,52 +137,92 @@ export default function App() {
                                     </select>
                                   </div>
                                   
-                                  {/* Beautiful 3D Toggle */}
+                                  {/* Clean 3D Toggle */}
                                   <button
                                     onClick={() => setShow3DGrid(!show3DGrid)}
-                                    className={`btn-primary ${show3DGrid ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-gradient-to-r from-blue-500 to-purple-600'}`}
+                                    className={`btn-primary ${show3DGrid ? 'bg-green-600 border-green-600' : 'bg-blue-600 border-blue-600'}`}
                                   >
                                     {show3DGrid ? '🎯 3D Active' : '📱 2D Mode'}
                                   </button>
                                 </div>
                               </div>
                               
-                              {/* Main Content with Better Spacing */}
-                              <div className="grid grid-cols-[350px_1fr_480px] gap-8 items-start">
+                              {/* Main Content with Proper Spacing */}
+                              <div className="grid grid-cols-[380px_1fr_500px] gap-10 items-start">
                                 
-                                {/* Left Panel - Control Panels with Better Spacing */}
-                                <div className="flex flex-col gap-6 min-h-[800px]">
-                                  <VoxelInspectorPanel />
-                                  {isContextReady ? <TimelinePanel /> : (
-                                    <div className="card text-center animate-fade-in-up">
+                                {/* Left Panel - Control Panels with Proper Spacing */}
+                                <div className="flex flex-col gap-8 min-h-[900px]">
+                                  <div className="panel p-6">
+                                    <VoxelInspectorPanel />
+                                  </div>
+                                  
+                                  {isContextReady ? (
+                                    <div className="panel p-6">
+                                      <TimelinePanel />
+                                    </div>
+                                  ) : (
+                                    <div className="card text-center animate-fade-in">
                                       <div className="text-4xl mb-4">⏳</div>
-                                      <div className="text-base text-muted">Loading Timeline...</div>
+                                      <div className="text-base text-text-muted">Loading Timeline...</div>
                                     </div>
                                   )}
-                                  <RuleDebuggerPanel />
-                                  <MetricsPanel />
-                                  <RuleHotReloadPanel />
-                                  <LayerControlsPanel />
-                                  <PatternPanel />
-                                  <PresetsPanel />
-                                  <RuleTemplatesPanel />
-                                  <ParameterControlsPanel />
-                                  <RuleVersioningPanel />
-                                  <DiagnosticsPanel />
-                                  <LogConsole />
+                                  
+                                  <div className="panel p-6">
+                                    <RuleDebuggerPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <MetricsPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <RuleHotReloadPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <LayerControlsPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <PatternPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <PresetsPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <RuleTemplatesPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <ParameterControlsPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <RuleVersioningPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <DiagnosticsPanel />
+                                  </div>
+                                  
+                                  <div className="panel p-6">
+                                    <LogConsole />
+                                  </div>
                                 </div>
                                 
-                                {/* Center Panel - Beautiful Code Editor */}
-                                <div className="glass-panel-elevated overflow-hidden flex flex-col min-h-[800px]">
-                                  {/* Elegant Header */}
-                                  <div className="p-8 border-b border-border-primary/20 bg-accent/5 backdrop-blur-lg">
-                                    <h2 className="m-0 mb-6 text-3xl font-bold text-primary">
+                                {/* Center Panel - Clean Code Editor */}
+                                <div className="panel-elevated overflow-hidden flex flex-col min-h-[900px]">
+                                  {/* Clean Header */}
+                                  <div className="p-8 border-b border-border-primary bg-bg-secondary">
+                                    <h2 className="m-0 mb-6 text-3xl font-bold text-text-primary">
                                       Code Editor
                                     </h2>
                                     
-                                    {/* Beautiful Example Selector */}
+                                    {/* Clean Example Selector */}
                                     <div className="mb-6">
-                                      <label className="block mb-3 text-sm font-semibold text-muted">
+                                      <label className="block mb-3 text-sm font-semibold text-text-muted">
                                         Examples:
                                       </label>
                                       <div className="flex gap-4 items-center">
@@ -208,7 +245,7 @@ export default function App() {
                                     </div>
                                   </div>
                                   
-                                  {/* Monaco Editor with Better Styling */}
+                                  {/* Monaco Editor with Clean Styling */}
                                   <div className="flex-1 p-6">
                                     <Editor
                                       height="100%"
@@ -234,28 +271,28 @@ export default function App() {
                                     />
                                   </div>
                                   
-                                  {/* Beautiful Output Panel */}
-                                  <div className="h-60 p-6 border-t border-border-primary/20 bg-accent/5 backdrop-blur-lg">
-                                    <h4 className="m-0 mb-4 text-xl font-semibold text-primary">
+                                  {/* Clean Output Panel */}
+                                  <div className="h-64 p-6 border-t border-border-primary bg-bg-secondary">
+                                    <h4 className="m-0 mb-4 text-xl font-semibold text-text-primary">
                                       Output:
                                     </h4>
-                                    <pre className="m-0 text-sm font-mono text-muted leading-relaxed overflow-auto max-h-40 p-4 bg-accent/30 rounded-xl border border-border-primary/20">
+                                    <pre className="m-0 text-sm font-mono text-text-muted leading-relaxed overflow-auto max-h-48 p-4 bg-bg-accent rounded-lg border border-border-primary">
                                       {output || 'Ready to run MPL code...'}
                                     </pre>
                                   </div>
                                 </div>
                                 
-                                {/* Right Panel - Beautiful 3D Visualization */}
-                                <div className="glass-panel-elevated p-8 min-h-[800px]">
-                                  <h2 className="m-0 mb-8 text-3xl font-bold text-primary text-center">
+                                {/* Right Panel - Clean 3D Visualization */}
+                                <div className="panel-elevated p-8 min-h-[900px]">
+                                  <h2 className="m-0 mb-8 text-3xl font-bold text-text-primary text-center">
                                     3D Visualization
                                   </h2>
                                   
-                                  {/* Beautiful 3D Grid Toggle */}
+                                  {/* Clean 3D Grid Toggle */}
                                   <div className="mb-8 text-center">
-                                    <div className="h-48 gradient-bg rounded-3xl flex items-center justify-center text-muted border-2 border-dashed border-border-primary/30 text-lg font-medium mb-6">
+                                    <div className="h-48 bg-bg-secondary rounded-2xl flex items-center justify-center text-text-muted border-2 border-dashed border-border-primary text-lg font-medium mb-6">
                                       {show3DGrid ? (
-                                        <div className="text-center animate-fade-in-up">
+                                        <div className="text-center animate-fade-in">
                                           <div className="text-7xl mb-6">🎯</div>
                                           <div className="text-2xl mb-3 font-semibold">3D Voxel Grid</div>
                                           <div className="text-base opacity-80">
@@ -263,7 +300,7 @@ export default function App() {
                                           </div>
                                         </div>
                                       ) : (
-                                        <div className="text-center animate-fade-in-up">
+                                        <div className="text-center animate-fade-in">
                                           <div className="text-7xl mb-6">📱</div>
                                           <div className="text-2xl mb-3 font-semibold">2D Grid Mode</div>
                                           <div className="text-base opacity-80">
@@ -274,20 +311,20 @@ export default function App() {
                                     </div>
                                   </div>
                                   
-                                  {/* Beautiful Grid Preview */}
+                                  {/* Clean Grid Preview */}
                                   <div>
-                                    <h4 className="m-0 mb-6 text-xl font-semibold text-primary text-center">
+                                    <h4 className="m-0 mb-6 text-xl font-semibold text-text-primary text-center">
                                       Grid Preview (50×50) - Layer {activeLayer}
                                     </h4>
-                                    <div className="grid grid-cols-10 gap-2 bg-accent/5 p-6 rounded-2xl border border-border-primary/20 justify-center">
+                                    <div className="grid grid-cols-10 gap-2 bg-bg-secondary p-6 rounded-2xl border border-border-primary justify-center">
                                       {Array(10).fill(null).map((_, i) =>
                                         Array(10).fill(null).map((_, j) => (
                                           <div
                                             key={`${i}-${j}`}
-                                            className={`w-8 h-8 rounded-xl border border-border-primary/20 transition-all duration-300 cursor-pointer ${
+                                            className={`w-8 h-8 rounded-lg border border-border-primary transition-all duration-200 cursor-pointer ${
                                               i === 5 && j === 5 
-                                                ? 'bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg scale-110' 
-                                                : 'bg-accent/20 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:scale-110 hover:rotate-3 hover:shadow-lg'
+                                                ? 'bg-blue-600 border-blue-600 shadow-md scale-110' 
+                                                : 'bg-bg-accent hover:bg-blue-100 dark:hover:bg-blue-900 hover:scale-105 hover:shadow-sm'
                                             }`}
                                           />
                                         ))
@@ -297,8 +334,8 @@ export default function App() {
                                 </div>
                               </div>
                               
-                              {/* Beautiful Footer */}
-                              <div className="mt-12 card text-center text-muted">
+                              {/* Clean Footer */}
+                              <div className="mt-16 card text-center text-text-muted">
                                 <p className="m-0 text-base">
                                   MPL Playground - Advanced Monad Programming Language Environment ✨
                                 </p>
