@@ -62,7 +62,7 @@ export default function App() {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
-
+  
   // Theme switching with proper CSS class management
   useEffect(() => {
     if (isDarkMode) {
@@ -92,17 +92,17 @@ export default function App() {
       {/* Clean Background */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
       
-      <LogProvider>
-        <VoxelSelectionProvider>
-          <HistoryProvider>
-            <MetricsProvider>
-              <RuleEditorProvider>
-                <LayerConfigProvider>
-                  <PatternUIProvider>
-                    <PresetsProvider>
-                      <RuleTemplatesProvider>
-                        <RuleVersioningProvider>
-                          <ParameterControlsProvider>
+        <LogProvider>
+          <VoxelSelectionProvider>
+            <HistoryProvider>
+              <MetricsProvider>
+                <RuleEditorProvider>
+                  <LayerConfigProvider>
+                    <PatternUIProvider>
+                      <PresetsProvider>
+                        <RuleTemplatesProvider>
+                          <RuleVersioningProvider>
+                            <ParameterControlsProvider>
                             <div className="app min-h-screen p-8 box-border">
                               
                               {/* Clean Top Navigation Bar */}
@@ -113,7 +113,7 @@ export default function App() {
                                 
                                 <div className="flex gap-6 items-center">
                                   {/* Clean Theme Toggle */}
-                                  <button
+          <button
                                     onClick={toggleTheme}
                                     className="btn-secondary p-3 rounded-full transition-all duration-200 hover:scale-105"
                                     title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
@@ -121,30 +121,30 @@ export default function App() {
                                     <span className="text-xl">
                                       {isDarkMode ? '☀️' : '🌙'}
                                     </span>
-                                  </button>
+          </button>
                                   
                                   {/* Clean Layer Control */}
                                   <div className="flex items-center gap-3">
                                     <label className="text-sm font-medium text-text-muted">Layer:</label>
-                                    <select
+          <select
                                       value={activeLayer}
                                       onChange={(e) => setActiveLayer(Number(e.target.value))}
                                       className="form-select min-w-[120px]"
                                     >
                                       {[0, 1, 2, 3].map(layer => (
                                         <option key={layer} value={layer}>Layer {layer}</option>
-                                      ))}
-                                    </select>
+            ))}
+          </select>
                                   </div>
-                                  
+          
                                   {/* Clean 3D Toggle */}
-                                  <button
+          <button
                                     onClick={() => setShow3DGrid(!show3DGrid)}
                                     className={`btn-primary ${show3DGrid ? 'bg-green-600 border-green-600' : 'bg-blue-600 border-blue-600'}`}
                                   >
                                     {show3DGrid ? '🎯 3D Active' : '📱 2D Mode'}
-                                  </button>
-                                </div>
+          </button>
+        </div>
                               </div>
                               
                               {/* Main Content with Proper Spacing */}
@@ -154,64 +154,64 @@ export default function App() {
                                 <div className="flex flex-col gap-8 min-h-[900px]">
                                   <div className="panel p-6">
                                     <VoxelInspectorPanel />
-                                  </div>
+            </div>
                                   
                                   {isContextReady ? (
                                     <div className="panel p-6">
                                       <TimelinePanel />
-                                    </div>
+              </div>
                                   ) : (
                                     <div className="card text-center animate-fade-in">
                                       <div className="text-4xl mb-4">⏳</div>
                                       <div className="text-base text-text-muted">Loading Timeline...</div>
-                                    </div>
-                                  )}
-                                  
+          </div>
+        )}
+        
                                   <div className="panel p-6">
                                     <RuleDebuggerPanel />
-                                  </div>
+            </div>
                                   
                                   <div className="panel p-6">
                                     <MetricsPanel />
-                                  </div>
+          </div>
                                   
                                   <div className="panel p-6">
                                     <RuleHotReloadPanel />
-                                  </div>
-                                  
+        </div>
+
                                   <div className="panel p-6">
                                     <LayerControlsPanel />
-                                  </div>
-                                  
+        </div>
+
                                   <div className="panel p-6">
                                     <PatternPanel />
-                                  </div>
-                                  
+        </div>
+
                                   <div className="panel p-6">
                                     <PresetsPanel />
-                                  </div>
-                                  
+        </div>
+
                                   <div className="panel p-6">
                                     <RuleTemplatesPanel />
-                                  </div>
-                                  
+        </div>
+
                                   <div className="panel p-6">
                                     <ParameterControlsPanel />
-                                  </div>
-                                  
+        </div>
+        
                                   <div className="panel p-6">
                                     <RuleVersioningPanel />
-                                  </div>
-                                  
+        </div>
+        
                                   <div className="panel p-6">
                                     <DiagnosticsPanel />
-                                  </div>
-                                  
+        </div>
+        
                                   <div className="panel p-6">
                                     <LogConsole />
-                                  </div>
-                                </div>
-                                
+          </div>
+        </div>
+        
                                 {/* Center Panel - Clean Code Editor */}
                                 <div className="panel-elevated overflow-hidden flex flex-col min-h-[900px]">
                                   {/* Clean Header */}
@@ -241,22 +241,22 @@ export default function App() {
                                         >
                                           ▶ Run Code
                                         </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
+          </div>
+          </div>
+        </div>
+        
                                   {/* Monaco Editor with Clean Styling */}
                                   <div className="flex-1 p-6">
-                                    <Editor
+        <Editor
                                       height="100%"
                                       defaultLanguage="javascript"
                                       value={code}
                                       onChange={(value) => setCode(value || '')}
                                       theme={isDarkMode ? "vs-dark" : "light"}
-                                      options={{
-                                        minimap: { enabled: false },
+          options={{
+            minimap: { enabled: false },
                                         fontSize: 16,
-                                        lineNumbers: 'on',
+            lineNumbers: 'on',
                                         roundedSelection: false,
                                         scrollBeyondLastLine: false,
                                         automaticLayout: true,
@@ -269,8 +269,8 @@ export default function App() {
                                         cursorBlinking: 'smooth'
                                       }}
                                     />
-                                  </div>
-                                  
+          </div>
+          
                                   {/* Clean Output Panel */}
                                   <div className="h-64 p-6 border-t border-border-primary bg-bg-secondary">
                                     <h4 className="m-0 mb-4 text-xl font-semibold text-text-primary">
@@ -279,9 +279,9 @@ export default function App() {
                                     <pre className="m-0 text-sm font-mono text-text-muted leading-relaxed overflow-auto max-h-48 p-4 bg-bg-accent rounded-lg border border-border-primary">
                                       {output || 'Ready to run MPL code...'}
                                     </pre>
-                                  </div>
-                                </div>
-                                
+          </div>
+        </div>
+        
                                 {/* Right Panel - Clean 3D Visualization */}
                                 <div className="panel-elevated p-8 min-h-[900px]">
                                   <h2 className="m-0 mb-8 text-3xl font-bold text-text-primary text-center">
@@ -305,12 +305,12 @@ export default function App() {
                                           <div className="text-2xl mb-3 font-semibold">2D Grid Mode</div>
                                           <div className="text-base opacity-80">
                                             Switch to 3D for full experience
-                                          </div>
-                                        </div>
+        </div>
+      </div>
                                       )}
-                                    </div>
-                                  </div>
-                                  
+        </div>
+          </div>
+          
                                   {/* Clean Grid Preview */}
                                   <div>
                                     <h4 className="m-0 mb-6 text-xl font-semibold text-text-primary text-center">
@@ -329,8 +329,8 @@ export default function App() {
                                           />
                                         ))
                                       )}
-                                    </div>
-                                  </div>
+          </div>
+        </div>
                                 </div>
                               </div>
                               
@@ -342,19 +342,19 @@ export default function App() {
                                 <p className="mt-3 mb-0 text-sm opacity-80">
                                   Complete System: 3D Visualization • Pattern I/O • Rule Hot-Reload • Multi-Layer Support • Diagnostics
                                 </p>
-                              </div>
-                            </div>
-                          </ParameterControlsProvider>
-                        </RuleVersioningProvider>
-                      </RuleTemplatesProvider>
-                    </PresetsProvider>
-                  </PatternUIProvider>
-                </LayerConfigProvider>
-              </RuleEditorProvider>
-            </MetricsProvider>
-          </HistoryProvider>
-        </VoxelSelectionProvider>
-      </LogProvider>
+      </div>
+    </div>
+                            </ParameterControlsProvider>
+                          </RuleVersioningProvider>
+                        </RuleTemplatesProvider>
+                      </PresetsProvider>
+                    </PatternUIProvider>
+                  </LayerConfigProvider>
+                </RuleEditorProvider>
+              </MetricsProvider>
+            </HistoryProvider>
+          </VoxelSelectionProvider>
+        </LogProvider>
     </div>
   );
 }
