@@ -129,6 +129,6 @@ body {
 
 /* Force CSS refresh */
 :root {
-  --build-timestamp: 20250816;
-  --build-version: "0.1.2";
+  --build-timestamp: 20250817;
+  --build-version: "0.1.3";
 }
