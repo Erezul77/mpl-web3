@@ -88,9 +88,12 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative ${isDarkMode ? 'dark' : 'light'} build-20250816`}>
-      {/* Clean Background */}
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      {/* 🚨 CARDINAL CHANGE: COMPLETELY NEW HEADER */}
+      <header className="bg-red-500 text-white p-4 text-center">
+        <h1 className="text-3xl font-bold">🚨 MPL WEB3 - COMPLETELY NEW HEADER! 🚨</h1>
+        <p className="text-lg">This is a CARDINAL change to test if deployment works!</p>
+      </header>
       
         <LogProvider>
           <VoxelSelectionProvider>
