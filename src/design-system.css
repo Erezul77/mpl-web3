@@ -1,0 +1,134 @@
+/* Clean & Elegant Design System - Black/White Focus - Build: 20250816 */
+:root {
+  /* Light Theme - Clean & Minimal */
+  --bg-primary: 255 255 255;
+  --bg-secondary: 248 250 252;
+  --bg-tertiary: 241 245 249;
+  --bg-accent: 255 255 255;
+  --text-primary: 15 23 42;
+  --text-secondary: 51 65 85;
+  --text-muted: 100 116 139;
+  --accent-primary: 15 23 42;
+  --accent-secondary: 51 65 85;
+  --border-primary: 226 232 240;
+  --border-secondary: 203 213 225;
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme - Clean & Minimal */
+.dark {
+  --bg-primary: 15 23 42;
+  --bg-secondary: 30 41 59;
+  --bg-tertiary: 51 65 85;
+  --bg-accent: 23 33 52;
+  --text-primary: 248 250 252;
+  --text-secondary: 203 213 225;
+  --text-muted: 148 163 184;
+  --accent-primary: 248 250 252;
+  --accent-secondary: 203 213 225;
+  --border-primary: 51 65 85;
+  --border-secondary: 71 85 105;
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-strong: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+  transition: all 0.3s ease;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Clean Panel System */
+.panel {
+  background: rgb(var(--bg-accent)) !important;
+  border: 1px solid rgb(var(--border-primary)) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.2s ease !important;
+}
+
+.panel:hover {
+  box-shadow: var(--shadow-medium) !important;
+  border-color: rgb(var(--accent-primary)) !important;
+}
+
+.panel-elevated {
+  background: rgb(var(--bg-accent)) !important;
+  border: 1px solid rgb(var(--border-primary)) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+/* Clean Buttons */
+.btn-primary {
+  background: rgb(var(--accent-primary)) !important;
+  color: rgb(var(--bg-primary)) !important;
+  border: 1px solid rgb(var(--accent-primary)) !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0) !important;
+}
+
+.btn-secondary {
+  background: rgb(var(--bg-accent)) !important;
+  color: rgb(var(--text-primary)) !important;
+  border: 1px solid rgb(var(--border-primary)) !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-secondary:hover {
+  background: rgb(var(--bg-secondary)) !important;
+  border-color: rgb(var(--accent-primary)) !important;
+}
+
+/* Clean Cards */
+.card {
+  background: rgb(var(--bg-accent)) !important;
+  border: 1px solid rgb(var(--border-primary)) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.2s ease !important;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium) !important;
+  border-color: rgb(var(--accent-primary)) !important;
+}
+
+/* Force CSS refresh */
+:root {
+  --build-timestamp: 20250816;
+  --build-version: "0.1.2";
+}
